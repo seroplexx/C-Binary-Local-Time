@@ -1,6 +1,5 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 
-
 #include <stdio.h>
 #include <conio.h>
 #include<windows.h>
@@ -17,22 +16,8 @@
 0000 1010 >>2
 0000 0000 >>1
 */
-//---------------------------Decimal-Binary-Çevirici---------------------
-/*
+//------------------------------------------------------------------Decimal-Binary-Converter-------------------------------------------------------------
 
-Bu kod içime sinmedi daha da nasıl sadeleştirim diye üzerinde kafa patlacam.Kızacağını bilerek atıyorum abi Bu ne biçim kod ulen bu diyebilirsin :))
-
-Bu ikinci yazdığım fonksiyon ilki tersten yazdı olmadı sonra bitlere çevirdim kafamı
-
-Abi bu aşağıda ki binfonk fonksiyonu toplantıda aklıma geldi çocun tekine matamatik mantık sorusu çözmüştüm 10 dk önce ordan esinlendim sonuçta bitlerle işlem yapıyoruz biz
-
-sonra araştırıdm google üzerinden böle deil ama farklı düşünenler olmuş
-
-hesap makinesinden hemen bitleri kaydırarak sağlama yaptım oldu.Sistem şu şekilde işlio asıl iş bitleri kaydırmakta matamatikte mantık gibi 2 rakamı ve bağlacı ile
-
-karşılatırıp eğer örtüşüyorsa 1 bastırıyor yukarda bir adet örnek yaptım.
-
-*/
 int binfonk(int yolla) {
     int binary, i;
 
@@ -50,15 +35,10 @@ int binfonk(int yolla) {
             printf(" ");
         }
         //  b--;
-
     }
 }
 
-//--------------------------------For-Döngüsü------------------------------
-//Abi burda 8 adet char fonksiyonu var.İlk olarak birini hazrıladım sonra çoğalttım.
-//ss:dd:ss olarak 8 karakter için saatin dakikanın ve saniyeni karakterlerine ayrı fonksiyon açtım.
-//Aynı zamanda windows.h kütüphanesindeki Coord,handle ile yerlerini kendim belirledim diğer türlü alt alta yazdırdı printf("\n") yüzünden.
-//Printf'i kısıtladım mesela aşağıda 8 defa dönecek olan for döngüsündeki i 7'ye gelirse contiune ile devam etsin dedim ama oda sadece bir karakter için olduğu için olmadı.
+//-------------------------------------------------------------------------For-Döngüsü--------------------------------------------------------------------
 
 void kordinat(int x, int y)
 {
@@ -157,246 +137,237 @@ char donbaba5(int a1[8])
         caw++;
     }
 }
-//------------------------------Kordinat--------------------------------------
-//X,y değerleri kullanıcıya kalmış
-
-
+//-------------------------------------------------------------------------------Kordinat-----------------------------------------------------------------------------
 
 int main()
 {
-    // Bu kısmı çoğunlukla kitaptan yardım alarak yazdım mesela pointr'a adres atama gibi
-
     while (1)
-    {
+{
 
     
 
 
-    time_t simdi;  // Time.h kütüphanesinden time_t şeyinden Yeni bir "simdi" adlı değişken oluşturdum
+    time_t simdi;  // Time.h kütüphanesinden time_t zımbırtısından yeni bir "simdi" adlı değişken
     simdi = time(0); // Bu time'ı simdiye atadım 0 yerine NULL da yazabilirdim
 
-    struct tm zaman;  // tm structından zaman adlı bir değişken oluşturduk
+    struct tm zaman;  // tm structından zaman adlı bir değişken oluşturdum
 
-    zaman = *localtime(&simdi); // Bunu çok az çaldım diyebilirim.Biraz kitaptan biraz internetten toplama bişey oldu.Ama mantığını anladım kitaptan sonra.Zaman adres değil değer aldı
+    zaman = *localtime(&simdi); // Çorlanmış bir pointer :)
 
-    char simdi_saat[10];    // burası asıl istedim kısımdı çünkü saat dakika saniye karakterlerini tek tek kontrol edebiliyorum ilkinde yapamıyordum.
+    char simdi_saat[10];    // burası asıl mevzu çünkü saat dakika saniye karakterlerini tek tek kontrol edebiliyorum
 
-    strftime(simdi_saat, sizeof(simdi_saat), "%H.%M.%S", &zaman); // İşte C kitabından bakarak hazırladım bunu araştırdım istedimiz gibi düzenleme yapmayı sağlıyormuş
+    strftime(simdi_saat, sizeof(simdi_saat), "%H.%M.%S", &zaman); // istedimiz gibi düzenleme yapmayı sağlar
 
 //--------------------------Font-----------------------------
 
-    int ikinok[] = { 0,24,24,0,0,24,24,0 };
-    int sifir[] = { 127,65,65,65,65,65,65,127 };
-    int bir[] = { 8,24,40,72,8,8,8,127 };
-    int iki[] = { 28,34,66,4,8,16,32,127 };
-    int uc[] = { 124,2,1,2,126,1,2,124 };
-    int dort[] = { 1,2,4,8,17,33,127,1 };
-    int bes[] = { 127,64,64,64,126,1,2,124 };
-    int alti[] = { 31,32,64,94,65,65,33,30 };
-    int yedi[] = { 127,1,2,4,62,16,32,64 };
-    int sekiz[] = { 62,65,65,65,62,65,65,62 };
-    int dokuz[] = { 62,65,65,65,63,1,1,63 };
+    int ikinok[] = { 0,24,24,0,0,24,24,0};
+    int sifir[] = { 127,65,65,65,65,65,65,127};
+    int bir[] = {8,24,40,72,8,8,8,127};
+    int iki[] = {28,34,66,4,8,16,32,127};
+    int uc[] = {124,2,1,2,126,1,2,124};
+    int dort[] = {1,2,4,8,17,33,127,1};
+    int bes[] = {127,64,64,64,126,1,2,124};
+    int alti[] = {31,32,64,94,65,65,33,30};
+    int yedi[] = {127,1,2,4,62,16,32,64};
+    int sekiz[] = {62,65,65,65,62,65,65,62};
+    int dokuz[] = {62,65,65,65,63,1,1,63};
 
-    //------------------------------------------------------------
-    /* FONTLARI SENİN YAPTIĞIN GİBİ ABİ TEK TEK YAZARK OLUŞTURDUM.İLK ÖNCE 8*7 HAZIRLADIM AMA SONRA GÖRÜNTÜDE BEĞENMEDİKLERİMİN SAYISI İLE OYNADIM GÜZEL DURMASI İÇİN */
-    /*
-    Bu ksıımda takılmıştım en çok.Bu işlemi mantıksal oparatörler ile yapmıştım,algoritmada herşey tamamdı ama koda dökmeye başlayınca öle olmadı şuanlık en basit ama uzun
-    çözümü bu şekilde buldum abi "ss:dd:ss" bu sekiz karakterden her biri yukardaki belirli bir char fonksiyonuna gidiyor orda tek tek alınıp binfonk fonksiyonu
-    yani binary çevirme fonksiyonuna gidiyor bastırmada binary fonksiyonunun içinde yıldız ve boşluğuda orda belirledim.
-    */
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+ // #region
+        if (simdi_saat[0] == '0')
+            simdi_saat[0] = donbaba(sifir);
 
-    if (simdi_saat[0] == '0')
-        simdi_saat[0] = donbaba(sifir);
+        if (simdi_saat[0] == '1')
+            simdi_saat[0] = donbaba(bir);
 
-    if (simdi_saat[0] == '1')
-        simdi_saat[0] = donbaba(bir);
+        if (simdi_saat[0] == '2')
+            simdi_saat[0] = donbaba(iki);
 
-    if (simdi_saat[0] == '2')
-        simdi_saat[0] = donbaba(iki);
+        if (simdi_saat[0] == '3')
+            simdi_saat[0] = donbaba(uc);
 
-    if (simdi_saat[0] == '3')
-        simdi_saat[0] = donbaba(uc);
+        if (simdi_saat[0] == '4')
+            simdi_saat[0] = donbaba(dort);
 
-    if (simdi_saat[0] == '4')
-        simdi_saat[0] = donbaba(dort);
+        if (simdi_saat[0] == '5')
+            simdi_saat[0] = donbaba(bes);
 
-    if (simdi_saat[0] == '5')
-        simdi_saat[0] = donbaba(bes);
+        if (simdi_saat[0] == '6')
+            simdi_saat[0] = donbaba(alti);
 
-    if (simdi_saat[0] == '6')
-        simdi_saat[0] = donbaba(alti);
+        if (simdi_saat[0] == '7')
+            simdi_saat[0] = donbaba(yedi);
 
-    if (simdi_saat[0] == '7')
-        simdi_saat[0] = donbaba(yedi);
+        if (simdi_saat[0] == '8')
+            simdi_saat[0] = donbaba(sekiz);
 
-    if (simdi_saat[0] == '8')
-        simdi_saat[0] = donbaba(sekiz);
+        if (simdi_saat[0] == '9')
+            simdi_saat[0] = donbaba(dokuz);
 
-    if (simdi_saat[0] == '9')
-        simdi_saat[0] = donbaba(dokuz);
 
+        if (simdi_saat[1] == '0')
+            simdi_saat[1] = donbaba1(sifir);
 
-    if (simdi_saat[1] == '0')
-        simdi_saat[1] = donbaba1(sifir);
+        if (simdi_saat[1] == '1')
+            simdi_saat[1] = donbaba1(bir);
 
-    if (simdi_saat[1] == '1')
-        simdi_saat[1] = donbaba1(bir);
+        if (simdi_saat[1] == '2')
+            simdi_saat[1] = donbaba1(iki);
 
-    if (simdi_saat[1] == '2')
-        simdi_saat[1] = donbaba1(iki);
+        if (simdi_saat[1] == '3')
+            simdi_saat[1] = donbaba1(uc);
 
-    if (simdi_saat[1] == '3')
-        simdi_saat[1] = donbaba1(uc);
+        if (simdi_saat[1] == '4')
+            simdi_saat[1] = donbaba1(dort);
 
-    if (simdi_saat[1] == '4')
-        simdi_saat[1] = donbaba1(dort);
+        if (simdi_saat[1] == '5')
+            simdi_saat[1] = donbaba1(bes);
 
-    if (simdi_saat[1] == '5')
-        simdi_saat[1] = donbaba1(bes);
+        if (simdi_saat[1] == '6')
+            simdi_saat[1] = donbaba1(alti);
 
-    if (simdi_saat[1] == '6')
-        simdi_saat[1] = donbaba1(alti);
+        if (simdi_saat[1] == '7')
+            simdi_saat[1] = donbaba1(yedi);
 
-    if (simdi_saat[1] == '7')
-        simdi_saat[1] = donbaba1(yedi);
+        if (simdi_saat[1] == '8')
+            simdi_saat[1] = donbaba1(sekiz);
 
-    if (simdi_saat[1] == '8')
-        simdi_saat[1] = donbaba1(sekiz);
+        if (simdi_saat[1] == '9')
+            simdi_saat[1] = donbaba1(dokuz);
 
-    if (simdi_saat[1] == '9')
-        simdi_saat[1] = donbaba1(dokuz);
 
 
+        if (simdi_saat[2] == '.')
+            simdi_saat[2] = donbaba01(ikinok);
+        simdi_saat[5] = donbaba02(ikinok);
 
-    if (simdi_saat[2] == '.')
-        simdi_saat[2] = donbaba01(ikinok);
-    simdi_saat[5] = donbaba02(ikinok);
 
 
 
+        if (simdi_saat[3] == '0')
+            simdi_saat[3] = donbaba2(sifir);
 
-    if (simdi_saat[3] == '0')
-        simdi_saat[3] = donbaba2(sifir);
+        if (simdi_saat[3] == '1')
+            simdi_saat[3] = donbaba2(bir);
 
-    if (simdi_saat[3] == '1')
-        simdi_saat[3] = donbaba2(bir);
+        if (simdi_saat[3] == '2')
+            simdi_saat[3] = donbaba2(iki);
 
-    if (simdi_saat[3] == '2')
-        simdi_saat[3] = donbaba2(iki);
+        if (simdi_saat[3] == '3')
+            simdi_saat[3] = donbaba2(uc);
 
-    if (simdi_saat[3] == '3')
-        simdi_saat[3] = donbaba2(uc);
+        if (simdi_saat[3] == '4')
+            simdi_saat[3] = donbaba2(dort);
 
-    if (simdi_saat[3] == '4')
-        simdi_saat[3] = donbaba2(dort);
+        if (simdi_saat[3] == '5')
+            simdi_saat[3] = donbaba2(bes);
 
-    if (simdi_saat[3] == '5')
-        simdi_saat[3] = donbaba2(bes);
+        if (simdi_saat[3] == '6')
+            simdi_saat[3] = donbaba2(alti);
 
-    if (simdi_saat[3] == '6')
-        simdi_saat[3] = donbaba2(alti);
+        if (simdi_saat[3] == '7')
+            simdi_saat[3] = donbaba2(yedi);
 
-    if (simdi_saat[3] == '7')
-        simdi_saat[3] = donbaba2(yedi);
+        if (simdi_saat[3] == '8')
+            simdi_saat[3] = donbaba2(sekiz);
 
-    if (simdi_saat[3] == '8')
-        simdi_saat[3] = donbaba2(sekiz);
+        if (simdi_saat[3] == '9')
+            simdi_saat[3] = donbaba2(dokuz);
 
-    if (simdi_saat[3] == '9')
-        simdi_saat[3] = donbaba2(dokuz);
+        if (simdi_saat[4] == '0')
+            simdi_saat[4] = donbaba3(sifir);
 
-    if (simdi_saat[4] == '0')
-        simdi_saat[4] = donbaba3(sifir);
+        if (simdi_saat[4] == '1')
+            simdi_saat[4] = donbaba3(bir);
 
-    if (simdi_saat[4] == '1')
-        simdi_saat[4] = donbaba3(bir);
+        if (simdi_saat[4] == '2')
+            simdi_saat[4] = donbaba3(iki);
 
-    if (simdi_saat[4] == '2')
-        simdi_saat[4] = donbaba3(iki);
+        if (simdi_saat[4] == '3')
+            simdi_saat[4] = donbaba3(uc);
 
-    if (simdi_saat[4] == '3')
-        simdi_saat[4] = donbaba3(uc);
+        if (simdi_saat[4] == '4')
+            simdi_saat[4] = donbaba3(dort);
 
-    if (simdi_saat[4] == '4')
-        simdi_saat[4] = donbaba3(dort);
+        if (simdi_saat[4] == '5')
+            simdi_saat[4] = donbaba3(bes);
 
-    if (simdi_saat[4] == '5')
-        simdi_saat[4] = donbaba3(bes);
+        if (simdi_saat[4] == '6')
+            simdi_saat[4] = donbaba3(alti);
 
-    if (simdi_saat[4] == '6')
-        simdi_saat[4] = donbaba3(alti);
+        if (simdi_saat[4] == '7')
+            simdi_saat[4] = donbaba3(yedi);
 
-    if (simdi_saat[4] == '7')
-        simdi_saat[4] = donbaba3(yedi);
+        if (simdi_saat[4] == '8')
+            simdi_saat[4] = donbaba3(sekiz);
 
-    if (simdi_saat[4] == '8')
-        simdi_saat[4] = donbaba3(sekiz);
+        if (simdi_saat[4] == '9')
+            simdi_saat[4] = donbaba3(dokuz);
 
-    if (simdi_saat[4] == '9')
-        simdi_saat[4] = donbaba3(dokuz);
 
+        if (simdi_saat[6] == '0')
+            simdi_saat[6] = donbaba4(sifir);
 
-    if (simdi_saat[6] == '0')
-        simdi_saat[6] = donbaba4(sifir);
+        if (simdi_saat[6] == '1')
+            simdi_saat[6] = donbaba4(bir);
 
-    if (simdi_saat[6] == '1')
-        simdi_saat[6] = donbaba4(bir);
+        if (simdi_saat[6] == '2')
+            simdi_saat[6] = donbaba4(iki);
 
-    if (simdi_saat[6] == '2')
-        simdi_saat[6] = donbaba4(iki);
+        if (simdi_saat[6] == '3')
+            simdi_saat[6] = donbaba4(uc);
 
-    if (simdi_saat[6] == '3')
-        simdi_saat[6] = donbaba4(uc);
+        if (simdi_saat[6] == '4')
+            simdi_saat[6] = donbaba4(dort);
 
-    if (simdi_saat[6] == '4')
-        simdi_saat[6] = donbaba4(dort);
+        if (simdi_saat[6] == '5')
+            simdi_saat[6] = donbaba4(bes);
 
-    if (simdi_saat[6] == '5')
-        simdi_saat[6] = donbaba4(bes);
+        if (simdi_saat[6] == '6')
+            simdi_saat[6] = donbaba4(alti);
 
-    if (simdi_saat[6] == '6')
-        simdi_saat[6] = donbaba4(alti);
+        if (simdi_saat[6] == '7')
+            simdi_saat[6] = donbaba4(yedi);
 
-    if (simdi_saat[6] == '7')
-        simdi_saat[6] = donbaba4(yedi);
+        if (simdi_saat[6] == '8')
+            simdi_saat[6] = donbaba4(sekiz);
 
-    if (simdi_saat[6] == '8')
-        simdi_saat[6] = donbaba4(sekiz);
+        if (simdi_saat[6] == '9')
+            simdi_saat[6] = donbaba4(dokuz);
 
-    if (simdi_saat[6] == '9')
-        simdi_saat[6] = donbaba4(dokuz);
 
+        if (simdi_saat[7] == '0')
+            simdi_saat[7] = donbaba5(sifir);
 
-    if (simdi_saat[7] == '0')
-        simdi_saat[7] = donbaba5(sifir);
+        if (simdi_saat[7] == '1')
+            simdi_saat[7] = donbaba5(bir);
 
-    if (simdi_saat[7] == '1')
-        simdi_saat[7] = donbaba5(bir);
+        if (simdi_saat[7] == '2')
+            simdi_saat[7] = donbaba5(iki);
 
-    if (simdi_saat[7] == '2')
-        simdi_saat[7] = donbaba5(iki);
+        if (simdi_saat[7] == '3')
+            simdi_saat[7] = donbaba5(uc);
 
-    if (simdi_saat[7] == '3')
-        simdi_saat[7] = donbaba5(uc);
+        if (simdi_saat[7] == '4')
+            simdi_saat[7] = donbaba5(dort);
 
-    if (simdi_saat[7] == '4')
-        simdi_saat[7] = donbaba5(dort);
+        if (simdi_saat[7] == '5')
+            simdi_saat[7] = donbaba5(bes);
 
-    if (simdi_saat[7] == '5')
-        simdi_saat[7] = donbaba5(bes);
+        if (simdi_saat[7] == '6')
+            simdi_saat[7] = donbaba5(alti);
 
-    if (simdi_saat[7] == '6')
-        simdi_saat[7] = donbaba5(alti);
+        if (simdi_saat[7] == '7')
+            simdi_saat[7] = donbaba5(yedi);
 
-    if (simdi_saat[7] == '7')
-        simdi_saat[7] = donbaba5(yedi);
+        if (simdi_saat[7] == '8')
+            simdi_saat[7] = donbaba5(sekiz);
 
-    if (simdi_saat[7] == '8')
-        simdi_saat[7] = donbaba5(sekiz);
+        if (simdi_saat[7] == '9')
+            simdi_saat[7] = donbaba5(dokuz);
+        
+    //    #endregion
 
-    if (simdi_saat[7] == '9')
-        simdi_saat[7] = donbaba5(dokuz);
-    
     
     
     Sleep(500);
